@@ -13,36 +13,39 @@ echo
 
 cd "${HOME}"
 
-echo "CLOING: AURIC"
-git clone "https://github.com/rickellis/AURIC.git"
-
+echo "CLOING: YAY"
+cd ~/
+git clone "https://aur.archlinux.org/yay.git"
+cd yay
+makepkg -si
+yay -Y --gendb
 
 PKGS=(
 
     # SYSTEM UTILITIES ----------------------------------------------------
 
-    'menulibre'                 # Menu editor
+    # 'menulibre'                 # Menu editor
     'gtkhash'                   # Checksum verifier
 
     # TERMINAL UTILITIES --------------------------------------------------
 
-    'hyper'                     # Terminal emulator built on Electron
+    # 'hyper'                     # Terminal emulator built on Electron
 
     # UTILITIES -----------------------------------------------------------
 
-    'dropbox'                   # Cloud file storage
-    'enpass-bin'                # Password manager
-    'slimlock'                  # Screen locker
-    'oomox'                     # Theme editor
+    # 'dropbox'                   # Cloud file storage
+    # 'enpass-bin'                # Password manager
+    # 'slimlock'                  # Screen locker
+    # 'oomox'                     # Theme editor
 
     # DEVELOPMENT ---------------------------------------------------------
     
-    'visual-studio-code-bin'    # Kickass text editor
+    # 'visual-studio-code-bin'    # Kickass text editor
 
     # MEDIA ---------------------------------------------------------------
 
     'spotify'                   # Music player
-    'screenkey'                 # Screencast your keypresses
+    # 'screenkey'                 # Screencast your keypresses
     # 'aftershotpro3'             # Photo editor
 
     # POST PRODUCTION -----------------------------------------------------
@@ -51,7 +54,7 @@ PKGS=(
 
     # COMMUNICATIONS ------------------------------------------------------
 
-    'skypeforlinux-stable-bin'  # Skype
+    # 'skypeforlinux-stable-bin'  # Skype
 
     # THEMES --------------------------------------------------------------
 
@@ -65,11 +68,12 @@ PKGS=(
 )
 
 
-cd ${HOME}/AURIC
-chmod +x auric.sh
+cd ${HOME}/YAY
+# chmod +x auric.sh
 
 for PKG in "${PKGS[@]}"; do
-    ./auric.sh -i $PKG
+    # ./auric.sh -i $PKG
+	yay -S $PKG
 done
 
 echo

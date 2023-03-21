@@ -8,16 +8,12 @@
 #-------------------------------------------------------------------------
 
 echo
-echo "INSTALLING XORG"
+echo "INSTALLING XFCE"
 echo
 
 PKGS=(
-        'xorg-server'           # XOrg server
-        'xorg-apps'             # XOrg apps group
-        'xorg-xinit'            # XOrg init
-        'xf86-video-intel'      # 2D/3D video driver
-        'mesa'                  # Open source version of OpenGL
-        # 'xf86-input-libinput'   # Trackpad driver for Dell XPS
+        'xfce4'                 # XFCE Desktop
+        'xfce4-goodies'         # All the extras
 )
 
 for PKG in "${PKGS[@]}"; do
